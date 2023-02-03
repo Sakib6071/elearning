@@ -13,7 +13,7 @@ const Header = () => {
                         <Link className='text-center' to={"/home"}>Home</Link>
                     </div>
                     <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
-                        <Link className='text-center' to={"/home"}>Courses</Link>
+                        <Link className='text-center' to={"/home"}>Classes</Link>
                     </div>
                     <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
                         <Link className='text-center' to={"/blogs"}>Blogs</Link>
