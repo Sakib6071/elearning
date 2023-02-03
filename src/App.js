@@ -8,6 +8,12 @@ import Blogs from './components/Blogs/Blogs';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import NotFound from './components/NotFound/NotFound';
+import ClassSix from './components/ClassSix/ClassSix';
+import ClassSeven from './components/ClassSeven/ClassSeven';
+import ClassEight from './components/ClassEight/ClassEight';
+import ClassNine from './components/ClassNine/ClassNine';
+import ClassTen from './components/ClassTen/ClassTen';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -20,8 +26,14 @@ function App() {
             <Route path='/blogs' element={<Blogs></Blogs>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
+            <Route path='/six' element={<ClassSix></ClassSix>}></Route>
+            <Route path='/seven' element={<ClassSeven></ClassSeven>}></Route>
+            <Route path='/eight' element={<ClassEight></ClassEight>}></Route>
+            <Route path='/nine' element={<ClassNine></ClassNine>}></Route>
+            <Route path='/ten' element={<ClassTen></ClassTen>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
           </Routes>
+          <Footer></Footer>
     </div>
   );
 }

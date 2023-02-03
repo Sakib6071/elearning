@@ -1,0 +1,58 @@
+[
+
+    {
+        "id": 1,
+        "subjectName": "General Math",
+        "description": "This course for class 9 and 10 commerce students",
+        "fee": 5000,
+        "photo": "https://i.ibb.co/0Z1z9CD/general-math.jpg"
+
+    },
+    {
+        "id": 2,
+        "subjectName": "Higher Math",
+        "description": "This course for class 9 and 10 commerce students",
+        "fee": 6000,
+        "photo": "https://i.ibb.co/ZXv0G1M/higher-math.jpg"
+
+    },
+    {
+        "id": 3,
+        "subjectName": "English",
+        "description": "This course for class 9 and 10 commerce students",
+        "fee": 4000,
+        "photo": "https://i.ibb.co/bNywXwp/english.jpg"
+
+    },
+    {
+        "id": 4,
+        "subjectName": "Physics",
+        "description": "This course for class 9 and 10 commerce students",
+        "fee": 4500,
+        "photo": "https://i.ibb.co/MDhyxcd/physics.jpg"
+        
+
+
+    },
+    {
+        "id": 5,
+        "subjectName": "Chemistry",
+        "description": "This course for class 9 and 10 commerce students",
+        "fee": 4500,
+        "photo": "https://i.ibb.co/WvMbN8g/chemistry.jpg"
+
+    },
+    {
+        "id": 6,
+        "subjectName": "Biology",
+        "description": "This course for class 9 and 10 commerce students",
+        "fee": 4000,
+        "photo": "https://i.ibb.co/8XDGDY8/biology.jpg"
+
+    }
+
+    
+    
+    
+    
+]

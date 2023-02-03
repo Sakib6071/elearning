@@ -1,0 +1,27 @@
+[
+
+    {
+        "id": 1,
+        "subjectName": "General Math",
+        "description": "Math will be easy for you after complete this course",
+        "fee": 4000,
+        "photo": "https://i.ibb.co/0Z1z9CD/general-math.jpg"
+
+    },
+    {
+        "id": 2,
+        "subjectName": "English",
+        "description": "This is English subject course. Increase your English skill",
+        "fee": 3500,
+        "photo": "https://i.ibb.co/bNywXwp/english.jpg"
+
+    },
+    {
+        "id": 3,
+        "subjectName": "Science",
+        "description": "All chapter cover in this Science course",
+        "fee": 3000,
+        "photo": "https://i.ibb.co/MDhyxcd/physics.jpg"
+
+    }
+]
