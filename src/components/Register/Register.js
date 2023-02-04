@@ -41,6 +41,8 @@ const Register = () => {
                 type="email"
                 placeholder="Your Email"
                 name="email"
+                required
+                
               />
             </div>
   
@@ -52,6 +54,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                required
               />
             </div>
   
@@ -64,6 +67,7 @@ const Register = () => {
                 type="password"
                 name='confirmPassword'
                 placeholder="Retype Password"
+                required
               />
             </div>
             <div>

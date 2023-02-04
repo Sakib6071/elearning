@@ -39,6 +39,7 @@ const Login = () => {
                 type="email"
                 placeholder="Your Email"
                 name="email"
+                required
               />
             </div>
   
@@ -50,6 +51,7 @@ const Login = () => {
                 type="password"
                 placeholder="Password"
                 name="password"
+                required
               />
             </div>
           <p className="text-red-500 text-center">{emailError?.message}</p>
