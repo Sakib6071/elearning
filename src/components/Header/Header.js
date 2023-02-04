@@ -1,5 +1,7 @@
 import React from 'react';
+import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import logo from '../../images/logo.png'
 const Header = () => {
     const navigate = useNavigate()
@@ -10,6 +12,13 @@ let classes = document.getElementById("classes");
     }
     const handleLogo=()=>{
         navigate('/home')
+    }
+    const [user] = useAuthState(auth);
+    const [signOut] = useSignOut(auth);
+    
+    const handleLogout=()=>{
+        signOut()
+navigate('/login')
     }
     return (
         <nav className=' bg-purple-800'>
@@ -30,9 +39,18 @@ let classes = document.getElementById("classes");
                     <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
                         <Link className='text-center' to={"/about"}>About</Link>
                     </div>
+                    {
+                        user?
+                        
+                        <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
+                        <button className='text-center' onClick={handleLogout}>Logout</button>
+                    </div>
+                    :
                     <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
                         <Link className='text-center' to={"/login"}>Login</Link>
                     </div>
+                        
+                    }
                 </div>
             </div>
         </nav>

@@ -1,14 +1,35 @@
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Login = () => {
+  const [
+    signInWithEmailAndPassword,
+    emailUser,
+    emailLoading,
+    emailError,
+  ] = useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate()
+  const handleLoginForm = e =>{
+    e.preventDefault()
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email,password);
+    signInWithEmailAndPassword(email,password)
+    
+  }
+  if(emailUser){
+    navigate('/')
+  }
+
     return (
         <div className='py-5'>
-        <div className="mt-5 w-2/5 mx-auto bg-gray-700 rounded-lg px-10 py-8">
-          <p className="text-center text-3xl text-green-500">Login Here</p>
-          <form>
+        <div className="mt-5 w-4/5 md:w-2/5 mx-auto bg-gray-700 rounded-lg px-10 py-8">
+          <p className="text-center my-5 text-3xl text-green-500">Login Here</p>
+          <form onSubmit={handleLoginForm}>
             <div className="email-field">
               <label className="text-white text-xl">Enter Your Email</label>{" "}
               <br />
@@ -31,7 +52,7 @@ const Login = () => {
                 name="password"
               />
             </div>
-          <p className="text-red-500 text-center">{/* error?.message */}</p>
+          <p className="text-red-500 text-center">{emailError?.message}</p>
             <div className="login-button mt-5 text-right">
               <input
                 className="hover:cursor-pointer w-full bg-green-500 text-white px-5 py-2 text-xl font-semibold rounded-lg"
