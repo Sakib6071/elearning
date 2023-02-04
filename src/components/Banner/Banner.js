@@ -24,13 +24,13 @@ const Banner = () => {
     <div>
       <Slider {...settings} className='h-full overflow-hidden'>
         <div className="banner1 w-full">
-          <img className=" w-full mx-auto" src={banner1} alt="banner" />
+          <img className="w-full mx-auto" src={banner1} alt="banner" />
         </div>
         <div className="banner2">
-          <img className=" w-full mx-auto" src={banner2} alt="banner" />
+          <img className="w-full mx-auto" src={banner2} alt="banner" />
         </div>
         <div className="banner3">
-          <img className=" w-full mx-auto" src={banner3} alt="banner" />
+          <img className="w-full mx-auto" src={banner3} alt="banner" />
         </div>
       </Slider>
     </div>

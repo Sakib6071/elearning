@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../images/logo.png'
 const Header = () => {
+    const navigate = useNavigate()
+    const handleClasses = () =>{
+navigate('/home#classes')
+let classes = document.getElementById("classes");
+  classes && classes.scrollIntoView({behavior:"smooth"});
+    }
     return (
         <nav className=' bg-purple-800'>
             <div className='grid grid-cols-1 sm:grid-cols-3 md:mx-10 sm:mx-2 gap-2 text-center'>
@@ -13,7 +19,7 @@ const Header = () => {
                         <Link className='text-center' to={"/home"}>Home</Link>
                     </div>
                     <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
-                        <Link className='text-center' to={"/home"}>Classes</Link>
+                        <button onClick={handleClasses} className='text-center'>Classes</button>
                     </div>
                     <div className=' text-center  flex justify-center  items-center text-xl font-semibold hover:text-green-400'>
                         <Link className='text-center' to={"/blogs"}>Blogs</Link>

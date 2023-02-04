@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Class = () => {
     const navigate = useNavigate()
   return (
-    <div className="py-5">
+    <div id="classes" className="py-5">
       <h2 className="text-center text-black pt-14 pb-5 text-5xl font-semibold">
         Choose Your Class
       </h2>
