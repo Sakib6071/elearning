@@ -10,7 +10,7 @@ const Class = () => {
     const navigate = useNavigate()
   return (
     <div id="classes" className="py-5">
-      <h2 className="text-center text-black pt-14 pb-5 text-5xl font-semibold">
+      <h2 className="text-center text-green-700 pt-14 pb-5 text-5xl font-semibold">
         Choose Your Class
       </h2>
       <div onClick={()=>{navigate('/six')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
