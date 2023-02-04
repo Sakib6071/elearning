@@ -7,7 +7,7 @@ const ReviewItem = ({review}) => {
     
     return (
         <div className=' grid grid-cols-3 bg-white rounded-lg mx-2 p-3'>
-            <div className='text-center'>
+            <div className='text-center mr-2'>
                 <img width={'80px'} className="mx-auto rounded-full" src={photo} alt="" />
                 <p className='font-semibold'>{name}</p>
                 <p className='font-semibold'>Class : {classes}</p>
@@ -38,8 +38,8 @@ const ReviewItem = ({review}) => {
                     </div>
                 }</>
             </div>
-            <div className=' col-span-2'>
-                <p className='py-2'>{description}</p>
+            <div className=' col-span-2 flex items-center'>
+                <p>{description}</p>
             </div>
             
         </div>
