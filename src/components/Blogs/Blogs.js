@@ -2,8 +2,8 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className=" h-screen bg-gray-500 text-white px-10">
-      <p className=" text-green-400 text-center text-3xl font-semibold py-5">
+    <div className="pt-5 pb-10 bg-gray-500 text-white md:px-20">
+      <p className=" text-green-400 text-center text-3xl font-semibold py-5 ">
         Blogs
       </p>
       <div>
@@ -21,7 +21,7 @@ const Blogs = () => {
           based on the user's role, permissions, or privileges.{" "}
         </p>
       </div>
-      <div className=" my-5">
+      <div className=" my-10">
         <p className="question font-semibold text-xl">
           2. Why are you using 'firebase'? What other options do you have to
           implement authentication?

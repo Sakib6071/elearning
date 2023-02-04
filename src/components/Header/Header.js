@@ -8,10 +8,13 @@ navigate('/home#classes')
 let classes = document.getElementById("classes");
   classes && classes.scrollIntoView({behavior:"smooth"});
     }
+    const handleLogo=()=>{
+        navigate('/home')
+    }
     return (
         <nav className=' bg-purple-800'>
             <div className='grid grid-cols-1 sm:grid-cols-3 md:mx-10 sm:mx-2 gap-2 text-center'>
-                <div className=' w-2/3 mx-auto py-5'>
+                <div onClick={handleLogo} className=' w-2/3 mx-auto py-5'>
                     <img src={logo} alt="Logo" />
                 </div>
                 <div className='text-white text-center sm:col-span-2 py-3 grid grid-cols-5 md:lm-5 lg:ml-20'>
