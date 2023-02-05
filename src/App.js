@@ -32,7 +32,7 @@ function App() {
             <Route path='/eight' element={<ClassEight></ClassEight>}></Route>
             <Route path='/nine' element={<ClassNine></ClassNine>}></Route>
             <Route path='/ten' element={<ClassTen></ClassTen>}></Route>
-            <Route path='/checkout/:ID/:Level' element={<Checkout></Checkout>}></Route>
+            <Route path='/checkout/:JS/:ID/:Level' element={<Checkout></Checkout>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
           </Routes>
           <Footer></Footer>

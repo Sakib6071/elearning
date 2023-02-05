@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const JuniorClassDetail = ({subject,classLevel}) => {
     const {id,subjectName,description,fee,photo}=subject;
-    const url = `/checkout/${id}/${classLevel}`
+    const url = `/checkout/junior/${id}/${classLevel}`
     const navigate = useNavigate()
     const handleBuyNow = () =>{
             navigate(url)

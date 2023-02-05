@@ -3,18 +3,22 @@ import { useNavigate, useParams } from "react-router-dom";
 import useJuniorClassDetail from "../../useHooks/useJuniorClassDetail";
 import auth from "../../firebase.init.js";
 import { useAuthState } from "react-firebase-hooks/auth";
+import useSeniorClassDetail from "../../useHooks/useSeniorClassDetail";
 
 const Checkout = () => {
     const [error,setError]=useState('')
     const navigate = useNavigate()
   const [user, loading] = useAuthState(auth);
   const [subjects, setSubjects] = useJuniorClassDetail([]);
-  console.log(user);
-  const { ID,Level } = useParams();
+  const [ssubjects, setSsubjects] = useSeniorClassDetail([]);
+  
+  const { JS,ID,Level } = useParams();
   const specificItem = subjects.find(
     (subject) => parseInt(subject.id) === parseInt(ID)
   );
-  console.log(specificItem);
+  const specificItemSenior = ssubjects.find(
+    (subject) => parseInt(subject.id) === parseInt(ID)
+  );
   const handleForm = e =>{
     e.preventDefault()
     const mobile = e.target.mobile.value;
@@ -33,7 +37,7 @@ const Checkout = () => {
       <form className="text-xl" onSubmit={handleForm}>
         <div className="block w-1/2 mx-auto border-b-2 my-4">
           <label className="font-semibold mr-2" htmlFor="name">User Name : </label>
-          <input className="focus:outline-none" type="text" name="name" id="" value={user?.displayName} />
+          <input className="focus:outline-none" type="text" name="name" id="" readOnly defaultValue={user?.displayName} />
         </div>
 
         <div className="block w-1/2 mx-auto border-b-2 my-4">
@@ -43,7 +47,7 @@ const Checkout = () => {
           type="email"
           name="email"
           id=""
-          value={user?.email}
+          readOnly defaultValue={user?.email}
         />
         </div>
 
@@ -55,7 +59,7 @@ const Checkout = () => {
           type="text"
           name="class"
           id=""
-          value={Level}
+          readOnly defaultValue={Level}
         />
         </div>
         <div className="block w-1/2 mx-auto border-b-2 my-4">
@@ -65,7 +69,7 @@ const Checkout = () => {
           type="text"
           name="subject"
           id=""
-          value={specificItem?.subjectName}
+          readOnly defaultValue={JS=='senior'?(specificItemSenior?.subjectName):(specificItem?.subjectName)}
         />
         </div>
         <div className="block w-1/2 mx-auto border-b-2 my-4">
@@ -75,7 +79,7 @@ const Checkout = () => {
           type="text"
           name="fee"
           id=""
-          value={specificItem?.fee}
+          readOnly defaultValue={JS=='senior'?(specificItemSenior?.fee):(specificItem?.fee)}
         />
         </div>
         
@@ -89,9 +93,9 @@ const Checkout = () => {
           placeholder="Your Phone Number"
         />
         </div>
-        <p className="w-1/2 mx-auto my-4 text-red-500 text-base italic">{error}</p>
+        <p className="w-1/2 mx-auto border-b-2 my-4 text-red-500 text-base italic">{error}</p>
         <div className=" cursor-pointer submit block w-1/2 mx-auto mt-7 mb-16 text-center bg-green-700 text-white p-2 text-xl font-semibold rounded-lg">
-            <input className=" cursor-pointer block w-full" type="submit" value="Confirm Payment" />
+            <input className=" cursor-pointer" type="submit" value="Confirm Payment" />
         </div>
       </form>
     </div>
