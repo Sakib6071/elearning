@@ -8,9 +8,9 @@ import useSeniorClassDetail from "../../useHooks/useSeniorClassDetail";
 const Checkout = () => {
     const [error,setError]=useState('')
     const navigate = useNavigate()
-  const [user, loading] = useAuthState(auth);
-  const [subjects, setSubjects] = useJuniorClassDetail([]);
-  const [ssubjects, setSsubjects] = useSeniorClassDetail([]);
+  const [user] = useAuthState(auth);
+  const [subjects] = useJuniorClassDetail([]);
+  const [ssubjects] = useSeniorClassDetail([]);
   
   const { JS,ID,Level } = useParams();
   const specificItem = subjects.find(
@@ -69,7 +69,7 @@ const Checkout = () => {
           type="text"
           name="subject"
           id=""
-          readOnly defaultValue={JS=='senior'?(specificItemSenior?.subjectName):(specificItem?.subjectName)}
+          readOnly defaultValue={JS==='senior'?(specificItemSenior?.subjectName):(specificItem?.subjectName)}
         />
         </div>
         <div className="block w-1/2 mx-auto border-b-2 my-4">
@@ -79,7 +79,7 @@ const Checkout = () => {
           type="text"
           name="fee"
           id=""
-          readOnly defaultValue={JS=='senior'?(specificItemSenior?.fee):(specificItem?.fee)}
+          readOnly defaultValue={JS==='senior'?(specificItemSenior?.fee):(specificItem?.fee)}
         />
         </div>
         

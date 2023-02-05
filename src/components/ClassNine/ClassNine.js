@@ -3,7 +3,7 @@ import useSeniorClassDetail from '../../useHooks/useSeniorClassDetail';
 import SeniorClassDetail from '../SeniorClassDetail/SeniorClassDetail';
 
 const ClassNine = () => {
-    const [subjects,setSubjects] = useSeniorClassDetail([])
+    const [subjects] = useSeniorClassDetail([])
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mx-10 my-5'>
             {
