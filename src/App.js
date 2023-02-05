@@ -14,6 +14,7 @@ import ClassEight from './components/ClassEight/ClassEight';
 import ClassNine from './components/ClassNine/ClassNine';
 import ClassTen from './components/ClassTen/ClassTen';
 import Footer from './components/Footer/Footer';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='/eight' element={<ClassEight></ClassEight>}></Route>
             <Route path='/nine' element={<ClassNine></ClassNine>}></Route>
             <Route path='/ten' element={<ClassTen></ClassTen>}></Route>
+            <Route path='/checkout/:ID/:Level' element={<Checkout></Checkout>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
           </Routes>
           <Footer></Footer>

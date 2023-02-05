@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useJuniorClassDetail = () => {
     const [subjects,setSubjects]=useState([])
     useEffect(()=>{
-        fetch('juniorClassDetail.json')
+        fetch('/juniorClassDetail.json')
         .then(res=>res.json())
         .then(data=>setSubjects(data))
     },[])
