@@ -26,8 +26,12 @@ const Register = () => {
     }
     else{
         createUserWithEmailAndPassword(email,password)
-        navigate('/')
+        
     }
+    
+  }
+  if(registerUser){
+    navigate('/')
   }
     return (
         <div>
@@ -72,7 +76,7 @@ const Register = () => {
               />
             </div>
             <div>
-              {<span className="text-red-500 text-center">{error || registerError}</span>}
+              <span className="text-red-500 text-center">{error || registerError?.message}</span>
             </div>
             <div className="register-button mt-5 text-right">
               <input

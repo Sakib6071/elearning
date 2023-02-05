@@ -1,8 +1,6 @@
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -22,9 +20,13 @@ const Login = () => {
     signInWithEmailAndPassword(email,password)
     
   }
+
+  const location = useLocation()
+  const from = location.state?.from?.pathname || "/"
   if(emailUser){
-    navigate('/')
+    navigate(from,{replace:true})
   }
+
 
     return (
         <div className='py-5'>
