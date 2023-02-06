@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -23,6 +24,9 @@ const Login = () => {
 
   const location = useLocation()
   const from = location.state?.from?.pathname || "/"
+  if(emailLoading){
+    return <Loading></Loading>
+  }
   if(emailUser){
     navigate(from,{replace:true})
   }
