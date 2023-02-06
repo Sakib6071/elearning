@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../Loading/Loading';
+import { sendEmailVerification } from 'firebase/auth';
 
 const Register = () => {
   const [error,setError]=useState('')
@@ -14,7 +15,7 @@ const Register = () => {
     registerUser,
     registerLoading,
     registerError,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:(true)});
   const handleRegisterForm = e =>{
     e.preventDefault()
     const email = e.target.email.value;
