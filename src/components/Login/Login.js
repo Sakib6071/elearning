@@ -17,7 +17,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email,password);
-    signInWithEmailAndPassword(email,password)
+    signInWithEmailAndPassword(email,password);
     
   }
 

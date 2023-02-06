@@ -1,19 +1,25 @@
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const SocialLogin = () => {
+  
+  const location = useLocation()
+  const from = location.state?.from?.pathname || "/"
   const navigate = useNavigate();
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const handleGoogleSignIn = () => {
     signInWithGoogle();
   };
-  if (user) {
-    navigate("/");
-  }
+ 
+  useEffect(()=>{
+    if (user) {
+      navigate(from,{replace:true})
+    }
+  },[user])
   return (
     <div>
       <div className="or w-4/5 mx-auto mb-5">

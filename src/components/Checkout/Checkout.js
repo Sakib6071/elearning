@@ -34,13 +34,13 @@ const Checkout = () => {
     <div>
       <p className="text-center text-5xl text-green-700 font-semibold my-10">Checkout</p>
 
-      <form className="text-xl" onSubmit={handleForm}>
-        <div className="block w-1/2 mx-auto border-b-2 my-4">
+      <form className="text-xl p-2 md:w-1/2 mx-auto" onSubmit={handleForm}>
+        <div className="block   mx-auto border-b-2 my-4">
           <label className="font-semibold mr-2" htmlFor="name">User Name : </label>
           <input className="focus:outline-none" type="text" name="name" id="" readOnly defaultValue={user?.displayName} />
         </div>
 
-        <div className="block w-1/2 mx-auto border-b-2 my-4">
+        <div className="block   mx-auto border-b-2 my-4">
             <label className="font-semibold mr-2" htmlFor="email">Email : </label>
         <input
           className=" w-3/4 focus:outline-none"
@@ -52,7 +52,7 @@ const Checkout = () => {
         </div>
 
         
-        <div className="block w-1/2 mx-auto border-b-2 my-4">
+        <div className="block   mx-auto border-b-2 my-4">
             <label className="font-semibold mr-2" htmlFor="fee">Class : </label>
         <input
           className="focus:outline-none"
@@ -62,7 +62,7 @@ const Checkout = () => {
           readOnly defaultValue={Level}
         />
         </div>
-        <div className="block w-1/2 mx-auto border-b-2 my-4">
+        <div className="block   mx-auto border-b-2 my-4">
             <label className="font-semibold mr-2" htmlFor="subject">Subject : </label>
         <input
           className="focus:outline-none"
@@ -72,7 +72,7 @@ const Checkout = () => {
           readOnly defaultValue={JS==='senior'?(specificItemSenior?.subjectName):(specificItem?.subjectName)}
         />
         </div>
-        <div className="block w-1/2 mx-auto border-b-2 my-4">
+        <div className="block   mx-auto border-b-2 my-4">
             <label className="font-semibold mr-2" htmlFor="fee">Course Fee : </label>
         <input
           className="focus:outline-none"
@@ -83,7 +83,7 @@ const Checkout = () => {
         />
         </div>
         
-        <div className="block w-1/2 mx-auto border-b-2 my-4">
+        <div className="block   mx-auto border-b-2 my-4">
             <label className="font-semibold mr-2" htmlFor="mobile">Mobile : </label>
         <input
           className="w-3/4 focus:outline-none"
@@ -93,8 +93,8 @@ const Checkout = () => {
           placeholder="Your Phone Number"
         />
         </div>
-        <p className="w-1/2 mx-auto border-b-2 my-4 text-red-500 text-base italic">{error}</p>
-        <div className=" cursor-pointer submit block w-1/2 mx-auto mt-7 mb-16 text-center bg-green-700 text-white p-2 text-xl font-semibold rounded-lg">
+        <p className="  mx-auto my-4 text-red-500 text-base italic">{error}</p>
+        <div className=" cursor-pointer submit block   mx-auto mt-7 mb-16 text-center bg-green-700 text-white p-2 text-xl font-semibold rounded-lg">
             <input className=" cursor-pointer" type="submit" value="Confirm Payment" />
         </div>
       </form>
