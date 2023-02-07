@@ -11,6 +11,8 @@ In this project user can register and login using email password or google. And 
 ### `Project Feature`
 
 - Registration and Login system using firebase.
+- User can reset their password
+- Email verification system
 - Email registration system and Google Sign in system also here. 
 - User can choose their class and choose relevant subject course. 
 

@@ -1,40 +1,52 @@
-import React, { useRef } from "react";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useEffect, useRef } from "react";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const emailRef = useRef()
+  const emailRef = useRef();
   const [signInWithEmailAndPassword, emailUser, emailLoading, emailError] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] =
-    useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
+
+  /* Login Form handle */
   const handleLoginForm = (e) => {
     e.preventDefault();
+    /* input value taking */
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
     signInWithEmailAndPassword(email, password);
   };
 
-
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (emailUser) {
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
+    }
+  }, [emailUser]);
+
   if (emailLoading) {
     return <Loading></Loading>;
   }
-  if (emailUser) {
-    navigate(from, { replace: true });
-  }
 
-  const handleForgetPassword = async() => {
+  /* Forget password module */
+  const handleForgetPassword = async () => {
     const email = emailRef.current.value;
-    if(email){
-
-      await sendPasswordResetEmail(email)
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent Password Reset Email");
+    } else {
+      toast("Please Enter Your Email First");
     }
   };
 
@@ -47,7 +59,7 @@ const Login = () => {
             <label className="text-white text-xl">Enter Your Email</label>{" "}
             <br />
             <input
-            ref={emailRef}
+              ref={emailRef}
               className=" px-2 py-3 w-full rounded-lg"
               type="email"
               placeholder="Your Email"
@@ -93,6 +105,7 @@ const Login = () => {
         </div>
         <SocialLogin></SocialLogin>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

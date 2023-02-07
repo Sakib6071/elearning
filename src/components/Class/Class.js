@@ -5,6 +5,8 @@ import class8 from "../../images/eightBanner.png";
 import class9 from "../../images/nineBanner.png";
 import class10 from "../../images/tenBanner.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"
+
 
 const Class = () => {
     const navigate = useNavigate()
@@ -13,21 +15,24 @@ const Class = () => {
       <h2 className="text-center text-green-700 pt-14 pb-5 text-5xl font-semibold">
         Choose Your Class
       </h2>
-      <div onClick={()=>{navigate('/six')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
+
+      {/* All class design */}
+      
+      <motion.div whileHover={{ scale: 1.1 }} onClick={()=>{navigate('/six')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
         <img className=" rounded-3xl" src={class6} alt="class6" />
-      </div>
-      <div onClick={()=>{navigate('/seven')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
+      </motion.div>
+      <motion.div whileHover={{scale:1.1}} onClick={()=>{navigate('/seven')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
         <img className=" rounded-3xl" src={class7} alt="class7" />
-      </div>
-      <div onClick={()=>{navigate('/eight')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
+      </motion.div>
+      <motion.div whileHover={{scale:1.1}} onClick={()=>{navigate('/eight')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
         <img className=" rounded-3xl" src={class8} alt="class8" />
-      </div>
-      <div onClick={()=>{navigate('/nine')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
+      </motion.div>
+      <motion.div whileHover={{scale:1.1}} onClick={()=>{navigate('/nine')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
         <img className=" rounded-3xl" src={class9} alt="class9" />
-      </div>
-      <div onClick={()=>{navigate('/ten')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
+      </motion.div>
+      <motion.div whileHover={{scale:1.1}} onClick={()=>{navigate('/ten')}} className="w-3/5 rounded-3xl my-5 text-center mx-auto cursor-pointer">
         <img className=" rounded-3xl" src={class10} alt="class10" />
-      </div>
+      </motion.div>
     </div>
   );
 };

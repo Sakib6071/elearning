@@ -1,15 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { motion } from "framer-motion"
+/* data taking from props */
 const JuniorClassDetail = ({subject,classLevel}) => {
     const {id,subjectName,description,fee,photo}=subject;
+
+    /* dynamic route with multiple parameter */
     const url = `/checkout/junior/${id}/${classLevel}`
     const navigate = useNavigate()
     const handleBuyNow = () =>{
             navigate(url)
     }
     return (
-        <div className='bg-gray-300 border-2 border-green-400 rounded-lg relative'>
+        <motion.div whileHover={{ scale: 1.1 }} className='bg-gray-300 border-2 border-green-400 rounded-lg relative'>
             <img className=' w-full rounded-t-lg' src={photo} alt="banner" />
             <p className='text-2xl px-2 font-semibold'>Class {classLevel}</p>
             <p className='text-2xl px-2 font-semibold py-2'>{subjectName}</p>
@@ -18,8 +21,8 @@ const JuniorClassDetail = ({subject,classLevel}) => {
             <br />
             <button
             onClick={handleBuyNow}
-            className=' absolute bottom-0 text-2xl text-center p-2 font-semibold bg-black text-white block w-full rounded-b-lg'>Buy Now</button>
-        </div>
+            className=' absolute bottom-0 text-2xl text-center p-2 font-semibold bg-black hover:bg-green-400 hover:text-black text-white block w-full rounded-b-lg'>Buy Now</button>
+        </motion.div>
     );
 };
 

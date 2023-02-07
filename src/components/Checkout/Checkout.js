@@ -4,6 +4,8 @@ import useJuniorClassDetail from "../../useHooks/useJuniorClassDetail";
 import auth from "../../firebase.init.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import useSeniorClassDetail from "../../useHooks/useSeniorClassDetail";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
     const [error,setError]=useState('')
@@ -23,11 +25,12 @@ const Checkout = () => {
     e.preventDefault()
     const mobile = e.target.mobile.value;
     if(mobile){
-        alert('Payment Complete')
-        navigate('/home')
+      toast('Thanks for enroll your course')
+        // navigate('/home')
     }
     else{
         setError('Enter Your Mobile Number')
+        toast('Enter Your Mobile Number first')
     }
   }
   return (
@@ -98,6 +101,7 @@ const Checkout = () => {
             <input className=" cursor-pointer" type="submit" value="Confirm Payment" />
         </div>
       </form>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
