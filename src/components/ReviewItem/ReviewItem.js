@@ -32,7 +32,7 @@ const ReviewItem = ({ review }) => {
             </div>
           ) : (
             <div>
-              {rating == 4 ? (
+              {rating === 4 ? (
                 <div>
                   <FontAwesomeIcon
                     icon={faStar}
