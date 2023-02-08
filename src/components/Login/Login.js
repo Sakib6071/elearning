@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Login = () => {
   const emailRef = useRef();
@@ -52,6 +53,7 @@ const Login = () => {
 
   return (
     <div className="py-5">
+      <PageTitle title="Login"></PageTitle>
       <div className="mt-5 w-4/5 md:w-2/5 mx-auto bg-gray-700 rounded-lg px-10 py-8">
         <p className="text-center my-5 text-3xl text-green-500">Login Here</p>
         <form onSubmit={handleLoginForm}>

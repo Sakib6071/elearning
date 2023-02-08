@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Loading/Loading";
 import { sendEmailVerification } from "firebase/auth";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -42,6 +43,7 @@ const Register = () => {
 
   return (
     <div>
+      <PageTitle title={"Register"}></PageTitle>
       <div className="my-5 w-4/5 md:w-2/5 mx-auto bg-gray-700 rounded-lg px-10 py-8">
         <p className="text-center my-5 text-3xl text-green-500">
           Register Here

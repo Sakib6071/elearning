@@ -1,8 +1,10 @@
 import React from "react";
+import PageTitle from "../PageTitle/PageTitle";
 
 const AboutMe = () => {
   return (
     <div className=" text-black py-10 bg-gray-50 px-10">
+      <PageTitle title={"About"}></PageTitle>
       <p className=" text-green-400 text-center text-3xl font-semibold py-5">
         About Me
       </p>

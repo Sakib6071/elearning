@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import useSeniorClassDetail from "../../useHooks/useSeniorClassDetail";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import PageTitle from "../PageTitle/PageTitle";
 
 const Checkout = () => {
     const [error,setError]=useState('')
@@ -35,6 +36,7 @@ const Checkout = () => {
   }
   return (
     <div>
+      <PageTitle title={"Checkout"}></PageTitle>
       <p className="text-center text-5xl text-green-700 font-semibold my-10">Checkout</p>
 
       <form className="text-xl p-2 md:w-1/2 mx-auto" onSubmit={handleForm}>
